@@ -1,10 +1,7 @@
-
-
 import java.util.Scanner;
 public class Buah2 {
     private String NamaBuah;
-    private String iNamaBuah;
-    private int iStok;
+    public String kadaluarsa;
     private int Harga;
     private int Stok;
         
@@ -13,10 +10,11 @@ public class Buah2 {
   
 	
     
-    public Buah2(String NamaBuah, int Harga, int Stok){
+    public Buah2 (String NamaBuah, int Harga, int Stok, String Tanggal){
 	this.NamaBuah = NamaBuah;
         this.Harga = Harga;
         this.Stok = Stok;
+        this.kadaluarsa = Tanggal;
         
     }
     public String getName(){
@@ -31,28 +29,25 @@ public class Buah2 {
     }
     public Integer getStok (){
      
-        return Stok;
-        
+        return Stok;  
           
+    }
+    public String Kadaluarsa(){
+        return kadaluarsa;
+        
     }
   
     
-  public void addStok(String iNamaBuah, Integer iStok){
+  public  void addStok(){
+      String iNamaBuah;
+      Integer iStok;
       System.out.print("masukan nama buah");
       iNamaBuah = input.nextLine();
       System.out.print("masukan stok baru");
-       iStok = input.nextInt();
-     
+      iStok = input.nextInt();
+
        Stok = Stok +  iStok;
-       System.out.println("buah " +NamaBuah+ "ditambah" + Stok);
-       
+       System.out.println("buah " +iNamaBuah+ "Total" + Stok);
+       }
   }
       
-    }
-
-
-
-
-    
-    
-
