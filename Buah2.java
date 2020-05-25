@@ -17,7 +17,7 @@ public class Buah2 {
         this.kadaluarsa = Tanggal;
         
     }
-    public String getName(){
+    public String getNamaBuah(){
         
         return NamaBuah;
     }
