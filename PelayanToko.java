@@ -8,7 +8,23 @@ public class PelayanToko {
         ID = _ID;
     }
     
-    public void  MengaturLetakBuah(){
+    public get_id(){
+        return ID;   
+    }
+    
+    public getNama(){
+        return Nama;   
+    }
+    
+    public set_id(String _ID){
+        ID = _ID;   
+    }
+    
+    public setNama(String _Nama){
+        Nama = _Nama
+    }
+    
+    public void  MenyusunBuah(){
         Buah _buah = new Buah ();
         _buah.kadaluarsa();
         
