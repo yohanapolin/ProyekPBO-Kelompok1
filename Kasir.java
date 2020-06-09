@@ -6,30 +6,15 @@ import java.util.Date;
  */
 public class Kasir {
     
-    private int kodePembayaran;
-    private int totalPembayaran;
-    private String jenisPembayaran;
-    private Date tanggalPembayaran;
+    private string id;
+    private string nama;
     
-    public String simpanPembayaran(){
+    public String mengelolaTransaksiPembayaran(){
         return null;
     }
 
-    public Date getTanggalPembayaran() {
-        return tanggalPembayaran;
+    public String mengelolaLaporan() {
+        return null;
     }
-
-    public int getKodePembayaran() {
-        return kodePembayaran;
-    }
-
-    public void setTotalPembayaran(int totalPembayaran) {
-        this.totalPembayaran = totalPembayaran;
-    }
-
-    public void setJenisPembayaran(String jenisPembayaran) {
-        this.jenisPembayaran = jenisPembayaran;
-    }
-    
     
 }
