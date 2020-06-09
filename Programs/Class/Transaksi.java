@@ -8,16 +8,11 @@ public class Transaksi {
     private int kodePembayaran;
     private int totalPembayaran;
     private String jenisPembayaran;
-    private Date tanggalPembayaran;
     private int nomorTransaksi;
     private Date tanggalTransaksi;
     
     public String simpanPembayaran(){
         return null;
-    }
-
-    public Date getTanggalPembayaran() {
-        return tanggalPembayaran;
     }
 
     public int getKodePembayaran() {
