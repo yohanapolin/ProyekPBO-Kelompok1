@@ -31,4 +31,5 @@ public class RakBuah {
     
     public setID(String _id){
         rak_id = _id;
+    }
 }
