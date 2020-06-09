@@ -7,23 +7,23 @@ public class PelayanToko {
         this.ID = ID;
     }
     
-    public get_id(){
+    public String get_id(){
         return ID;   
     }
     
-    public getNama(){
+    public String getNama(){
         return Nama;   
     }
     
-    public set_id(String ID){
+    public void set_id(String ID){
         this.ID = ID;   
     }
     
-    public setNama(String Nama){
-        this.Nama = Nama
+    public void setNama(String Nama){
+        this.Nama = Nama;
     }
     
-    public void  MenyusunBuah(){
+    public void MenyusunBuah(){
         Buah _buah = new Buah ();
         _buah.kadaluarsa();
         
