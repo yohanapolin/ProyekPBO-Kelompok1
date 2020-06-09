@@ -6,15 +6,16 @@ import java.util.Date;
  */
 public class Kasir {
     
-    private string id;
-    private string nama;
+    private String id;
+    private String nama;
+    private Laporan laporan;
     
     public String mengelolaTransaksiPembayaran(){
         return null;
     }
 
     public String mengelolaLaporan() {
-        return null;
+        return laporan;
     }
     
 }
