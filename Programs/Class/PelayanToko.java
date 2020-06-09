@@ -2,9 +2,9 @@ public class PelayanToko {
     static private String Nama;
     static private String ID;
     
-    public PelayanToko(String _Nama, String _ID){
-        Nama = _Nama;
-        ID = _ID;
+    public PelayanToko(String Nama, String ID){
+        this.Nama = Nama;
+        this.ID = ID;
     }
     
     public get_id(){
@@ -15,12 +15,12 @@ public class PelayanToko {
         return Nama;   
     }
     
-    public set_id(String _ID){
-        ID = _ID;   
+    public set_id(String ID){
+        this.ID = ID;   
     }
     
-    public setNama(String _Nama){
-        Nama = _Nama
+    public setNama(String Nama){
+        this.Nama = Nama
     }
     
     public void  MenyusunBuah(){
