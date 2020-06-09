@@ -14,8 +14,30 @@ public class Laporan {
   }
   
   public String getNomor() {
-  return noLaporan;
+    return noLaporan;
   }
+  
+  public String getJenis() {
+    return jenisLaporan;
+  }
+  
+  public String getTanggal(){
+    return tanggalLaporan;
+  }
+  
+  public void SetNomor(String noLaporan){
+    this.noLaporan = no.Laporan;
+  }
+  
+  public void SetJenis(String jenisLaporan){
+    this.jenisLaporan = jenisLaporan;
+  }
+  
+  public void SetTanggal(Date tanggalLaporan){
+    this.tanggalLaporan = tanggalLaporan;
+  } 
  }
+ 
+  
   
         
