@@ -3,14 +3,13 @@ package ProyekPBO;
 
 
 import java.util.Date;
-import java.util.Scanner;
+
 public class Buah {
     private String id_buah;
     private String NamaBuah;
     private int Harga;
     private int Stok;
     private Date tanggal_kadaluarsa;
-    Scanner input = new Scanner(System.in);
         
   
 	
@@ -63,23 +62,21 @@ public class Buah {
     this.tanggal_kadaluarsa =tanggal;
         
     }
-   public Date gettanggal(){
+   public Date getKadaluarsa(){
    return this.tanggal_kadaluarsa;   
    }
   
     
-  public  void addStok(){
-      String iNamaBuah;
-      Integer iStok;
-      System.out.print("masukan nama buah");
-      iNamaBuah = input.nextLine();
-      System.out.print("masukan stok baru");
-      iStok = input.nextInt();
+   public  void addStok(){
+      String iNamaBuah = null;
+      Integer iStok = null;
+      
 
        Stok = Stok +  iStok;
        System.out.println("buah " +iNamaBuah+ "Total" + Stok);
        }
   }
+   
       
     
 
