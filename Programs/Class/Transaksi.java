@@ -7,9 +7,8 @@ public class Transaksi {
     
     private int kodePembayaran;
     private int totalPembayaran;
-    private String jenisPembayaran;
-    private int nomorTransaksi;
-    private Date tanggalTransaksi;
+    private int nomorPembayaran;
+    private Date tanggalPembayaran;
     
     public String simpanPembayaran(){
         return null;
@@ -26,24 +25,16 @@ public class Transaksi {
     public void setJenisPembayaran(String jenisPembayaran) {
         this.jenisPembayaran = jenisPembayaran;
     }
-    
-    public String simpanTransaksi(){
-        return null;       
-    }
      
-    public String printTransaksi(){
+    public String printPembayaran(){
         return null;
     }
     
-    public void hapusTransaksi(){
-         
-    }
-    
-    public int getNomorTransaksi() {
+    public int getNomorPembayaran() {
         return nomorTransaksi;
     }
 
-    public Date getTanggalTransaksi() {
+    public Date getTanggalPembayaran() {
         return tanggalTransaksi;
     }
 
