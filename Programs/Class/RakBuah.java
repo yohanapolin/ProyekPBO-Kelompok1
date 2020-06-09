@@ -1,7 +1,7 @@
 public class RakBuah {
-    static private String rak_id;
-    static private int kapasitas;
-    static private String jenisBuah;
+    private String rak_id;
+    private int kapasitas;
+    private String jenisBuah;
             
     public RakBuah (String _id, int _Kapasitas, String Jenis){
         rak_id = _id;
