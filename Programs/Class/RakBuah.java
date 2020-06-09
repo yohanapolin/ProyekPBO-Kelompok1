@@ -1,12 +1,12 @@
-public class RakBuah {
+   public class RakBuah {
     private String rak_id;
     private int kapasitas;
     private String jenisBuah;
             
-    public RakBuah (String _id, int _Kapasitas, String Jenis){
-        rak_id = _id;
-        kapasitas = _Kapasitas;
-        JenisBuah = Jenis;
+    public RakBuah (String rak_id, int kapasitas, String jenisBuah){
+        rak_id = rak_id;
+        kapasitas = kapasitas;
+        this.jenisBuah = jenisBuah;
     }
    
     public String getID(){
@@ -17,19 +17,19 @@ public class RakBuah {
         return kapasitas;
     }
     
-    public int getJenisBuah(){
-         return JenisBuah;
+    public String getJenisBuah(){
+         return jenisBuah;
     }
     
-    public setKapasitas(int _Kapasitas){
-        kapasitas = _Kapasitas;
+    public void setKapasitas(int kapasitas){
+        kapasitas = kapasitas;
     }
     
-    public setJenisBuah(String Jenis){
-        JenisBuah = Jenis;
+    public void setJenisBuah(String jenisBuah){
+        this.jenisBuah = jenisBuah;
     }
     
-    public setID(String _id){
-        rak_id = _id;
+    public void setID(String rak_id){
+        this.rak_id = rak_id;
     }
 }
