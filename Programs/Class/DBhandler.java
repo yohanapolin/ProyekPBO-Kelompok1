@@ -1,9 +1,11 @@
+
 package lemonshop;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -66,9 +68,9 @@ public class DbHandler {
 		
 	}
 
-        public Buah  getinfobuah( String _id) {
+        public Buah getinfobuah( String _id) {
                 Buah buah = null;
-                RakBuah rakbuah = null;
+               
                 
 		if (this.connected) {
 			String query = "SELECT id_buah, nama_buah, Stok, Harga, Tanggal_Kadaluarsa FROM buah WHERE Id_buah ='" + _id + "'";
@@ -79,7 +81,7 @@ public class DbHandler {
 				ResultSet resultSet = stmt.executeQuery(query);
                                 
 				while (resultSet.next()) {
-                                   
+                                  
                       buah = new Buah(resultSet.getString(1), resultSet.getString(2),resultSet.getInt(3),resultSet.getInt(4),resultSet.getDate(5));
  
                                   	counter++;
@@ -94,19 +96,19 @@ public class DbHandler {
 		return (buah);
 	}
 
-            public RakBuah getidrakbuah(String _id){
+        public RakBuah getidrakbuah(String _id){
                 RakBuah rakbuah = null;
                 if (this.connected) {
-			String query = "SELECT `Id_Rak`  FROM `db_lemonshop`.`buah` WHERE ID_buah ='" + _id + "'";
+			String query = "SELECT rakbuah.ID_Rak  FROM rakbuah INNER JOIN buah ON rakbuah.ID_Rak = buah.Id_rak AND buah.Id_buah =" + _id ;
 			try {
-                                Statement stmt = this.connection.createStatement();
+                              PreparedStatement stmt = this.connection.prepareStatement(query);
+                              
                             
 				ResultSet resultSet = stmt.executeQuery(query);
                                 
 				while (resultSet.next()) {
-					rakbuah.setID(resultSet.getString(1));
-                                        
-                                  	counter++;
+                                rakbuah = new RakBuah (resultSet.getString(1));
+                                counter++;
                 }
                                         
 			} catch (Exception _e) {
@@ -118,7 +120,7 @@ public class DbHandler {
                 }
                  return (rakbuah);   
 }
-            public Buah updateStok( String id, String stok){
+        public Buah updateStok( String id, String stok){
                 Buah buah = null;
                 if (this.connected) {
 			String query = "UPDATE `db_lemonshop`.`buah` SET `Stok`="+ stok + " WHERE  `Id_buah`= '" + id + "'";
@@ -152,13 +154,13 @@ public class DbHandler {
                try {
 				
                                 Statement stmt = this.connection.createStatement();
-                            
-				ResultSet resultSet = stmt.executeQuery(query);
+                                stmt.executeUpdate(query);
+				//ResultSet resultSet = stmt.executeQuery(query);
                                 
-				while (resultSet.next()) {
-                                  buah.addStok(resultSet.getString(1), resultSet.getString(2));
-                                    counter++;
-                 }
+				//while (resultSet.next()) {
+                            //      buah.addStok(resultSet.getString(1), resultSet.getString(2));
+                  //                  counter++;
+               //  }
                                         
 			} catch (Exception _e) {
 				
@@ -198,6 +200,59 @@ public class DbHandler {
 		return (buah);
          }
          
-   //to be continue...         
+         public Buah deletebuah (String id){
+             Buah buah = null;
+                
+		if (this.connected) {
+			String query = "DELETE FROM `db_lemonshop`.`buah` WHERE  `Id_buah`=" +"'"+ id+ "';";
+			try {
+				
+                                Statement stmt = this.connection.createStatement();
+                            
+				stmt.executeUpdate(query);
+                                
+				
+                                        
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		return (buah);
+             
+         }    
+    
+   public List<Buah> getallbuah(){
+       this.counter = 0;
+		List<Buah> buff = new ArrayList<Buah>();
+                Buah buf2 = null;
+                if (this.connected) {
+			String query = "SELECT Id_buah, nama_buah, Harga, Stok, Tanggal_Kadaluarsa FROM db_lemonshop.buah";
+			try {
+				
+                                Statement stmt = this.connection.createStatement();
+                            
+				ResultSet resultSet = stmt.executeQuery(query);
+                                
+				while (resultSet.next()) {
+					buf2 = new Buah(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getInt(4),resultSet.getDate(5));
+                                        
+                                        counter++;
+                                        buff.add(buf2);
+                                        
+					
+				}
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		return buff;
+   } 
 
 }
+
+
+
+
+	
