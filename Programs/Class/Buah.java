@@ -1,5 +1,6 @@
 
-package ProyekPBO;
+package lemonshop;
+
 
 
 import java.util.Date;
@@ -10,11 +11,12 @@ public class Buah {
     private int Harga;
     private int Stok;
     private Date tanggal_kadaluarsa;
+   
         
   
 	
     
-    public Buah(String id_buah, String NamaBuah, int Harga, int Stok, Date Tanggal){
+    Buah(String id_buah, String NamaBuah, int Harga, int Stok, Date Tanggal){
         this.id_buah = id_buah;
 	this.NamaBuah = NamaBuah;
         this.Harga = Harga;
@@ -22,12 +24,14 @@ public class Buah {
         this.tanggal_kadaluarsa = Tanggal;
         
     }
+   
+   
     public void setID_buah (String id_buah){
         this.id_buah = id_buah;
 
     }
     
-    public String ID_buah (){
+    public String getID_buah (){
         return id_buah;
     }
     public void  setName(String name){
@@ -62,21 +66,17 @@ public class Buah {
     this.tanggal_kadaluarsa =tanggal;
         
     }
-   public Date getKadaluarsa(){
+   public Date getkadaluarsa(){
    return this.tanggal_kadaluarsa;   
    }
   
     
-   public  void addStok(){
-      String iNamaBuah = null;
-      Integer iStok = null;
-      
+  public  void addStok(String ID, String New_Stok){
+    
 
-       Stok = Stok +  iStok;
-       System.out.println("buah " +iNamaBuah+ "Total" + Stok);
+       
        }
   }
-   
       
     
 
@@ -85,6 +85,3 @@ public class Buah {
 
     
     
-
-
-
