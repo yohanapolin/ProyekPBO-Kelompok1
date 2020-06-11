@@ -23,14 +23,13 @@ public class PelayanToko {
         this.Nama = Nama;
     }
     
-    public void MenyusunBuah(){
-        Buah _buah = new Buah ();
-        _buah.kadaluarsa();
+    Buah buah = new Buah ();
+    RakBuah rak = new RakBuah ();
         
-        RakBuah rak = new RakBuah ();
-        rak.getRak_id();
+    public  void MenyusunBuah(){
+        buah.getkadaluarsa();
+        rak.getID();
         
-        //to be continued
     }
 
 }
