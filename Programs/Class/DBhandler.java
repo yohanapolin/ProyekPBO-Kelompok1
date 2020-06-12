@@ -249,6 +249,135 @@ public class DbHandler {
 		}
 		return buff;
    } 
+	 public void Laporan(String No_Laporan , String JenisLaporan, String Tanggal_Laporan) {
+		
+		if (this.connected) {
+			String query = "INSERT INTO Laporan( No_Laporan, JenisLaporan, Tanggal_Laporan ,Kasir, Pegawai) VALUES("+"'" + No_Laporan + "'," + "'" + JenisLaporan + "'" 
+					+ "," + "" + Tanggal_Laporan + ","+");";
+			try {
+                            Statement stmt = this.connection.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query);
+                                
+				
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		
+	}
+   
+    public List<Laporan> getalllaporan(){
+       this.counter = 0;
+		List<Laporan> buff = new ArrayList<Laporan>();
+                Laporan buf2 = null;
+                if (this.connected) {
+			String query = "SELECT No_Laporan, JenisLaporan, TanggalLaporan, FROM db_lemonshop.laporan";
+			try {
+				
+                                Statement stmt = this.connection.createStatement();
+                            
+				ResultSet resultSet = stmt.executeQuery(query);
+                                
+				while (resultSet.next()) {
+					buf2 = new Laporan(resultSet.getString(1),resultSet.getString(2),resultSet.getDate(3));
+                                        
+                                        counter++;
+                                        buff.add(buf2);
+                                        
+					
+				}
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		return buff;
+   } 
+    
+    public void addLaporan(String No_Laporan, String JenisLaporan, String Tanggal_Laporan) {
+		
+		if (this.connected) {
+			String query = "INSERT INTO laporan (No_Laporan, JenisLaporan,TanggalLaporan) VALUES("+"'" + No_Laporan + "'," + "'" + JenisLaporan + "'" 
+					+ "," + "" + Tanggal_Laporan + ");";
+			try {
+                            Statement stmt = this.connection.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query);
+                                
+				
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		
+	}
+    
+     public void Catatan_restock(String ID_Transaksi, String Tanggal, String nama_buah, String Jumlah, String Supplier, String Harga_beli) {
+		
+		if (this.connected) {
+			String query = "INSERT INTO catatan_restock(ID_Transaksi,Tanggal,nama_buah,Jumlah,Supplier,Harga_beli ) VALUES("+"'" + ID_Transaksi + "'," + "'" + Tanggal + "'" 
+					+ "," + "" + nama_buah + ","+"" + Jumlah + "," + "'" + Supplier+ "'," + Harga_beli +");";
+			try {
+                            Statement stmt = this.connection.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query);
+                                
+				
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		
+	}
+     
+      public List<Catatan_restock> getallcatatan(){
+       this.counter = 0;
+		List<Catatan_restock> buff = new ArrayList<Catatan_restock>();
+                Catatan_restock buf2 = null;
+                if (this.connected) {
+			String query = "SELECT ID_Transaksi,Tanggal,nama_buah,Jumlah,Supplier,Harga_beli, FROM db_lemonshop.transaksi_restok";
+			try {
+				
+                                Statement stmt = this.connection.createStatement();
+                            
+				ResultSet resultSet = stmt.executeQuery(query);
+                                
+				while (resultSet.next()) {
+					buf2 = new Catatan_restock(resultSet.getString(1),resultSet.getDate(2),resultSet.getString(3),resultSet.getInt(4),resultSet.getString(5),resultSet.getInt(6));
+                                        counter++;
+                                        buff.add(buf2);
+                                        
+					
+				}
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		return buff;
+   } 
+     
+     
+     
+      public void addcatatan(String ID_Transaksi, String Tanggal, String nama_buah, String Jumlah, String Supplier, String Harga_beli) {
+		
+		if (this.connected) {
+			String query = "INSERT INTO catatan_restock(ID_Transaksi,Tanggal,nama_buah,Jumlah,Supplier,Harga_beli ) VALUES("+"'" + ID_Transaksi + "'," + "'" + Tanggal + "'" 
+					+ "," + "" + nama_buah + ","+"" + Jumlah + "," + "'" + Supplier+ "'," + Harga_beli +");";
+			try {
+                            Statement stmt = this.connection.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query);
+                                
+				
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		
+	}
+
 
 }
 
