@@ -377,9 +377,35 @@ public class DbHandler {
 		}
 		
 	}
-
+ public RakBuah Add (String rak_id,String Kapasitas){
+             RakBuah rak = null;
+               if (this.connected) {
+			String query = "UPDATE `db_lemonshop`.`rakbuah` SET `Kapasitas`=  kapasitas +"+ Kapasitas + " WHERE  `ID_Rak`=" + rak_id;
+                               
+               try {
+				
+                                Statement stmt = this.connection.createStatement();
+                                stmt.executeUpdate(query);
+				//ResultSet resultSet = stmt.executeQuery(query);
+                                
+				//while (resultSet.next()) {
+                            //      buah.addStok(resultSet.getString(1), resultSet.getString(2));
+                  //                  counter++;
+               //  }
+                                        
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+               
+                     
+               }
+                  return (rak);
+         }
 
 }
+
+
 
 
 
