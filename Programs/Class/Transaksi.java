@@ -31,7 +31,7 @@ public class Transaksi {
         return kembalian;
     }
     
-    public void setTotak(int total){
+    public void setTotal(int total){
         this.total = total;
     }
     public void setKembalian(int kembalian){
