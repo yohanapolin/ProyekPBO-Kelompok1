@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `buah` (
   CONSTRAINT `buah_ibfk_1` FOREIGN KEY (`ID_Rak`) REFERENCES `rakbuah` (`ID_Rak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_lemonshop.buah: ~10 rows (approximately)
+-- Dumping data for table db_lemonshop.buah: ~9 rows (approximately)
 /*!40000 ALTER TABLE `buah` DISABLE KEYS */;
 INSERT INTO `buah` (`Id_buah`, `nama_buah`, `Stok`, `Harga`, `Tanggal_Kadaluarsa`, `ID_Rak`) VALUES
 	('120001', 'belimbing', 20, 20000, '2020-12-12', '140001'),
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `rakbuah` (
   PRIMARY KEY (`ID_Rak`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_lemonshop.rakbuah: ~10 rows (approximately)
+-- Dumping data for table db_lemonshop.rakbuah: ~8 rows (approximately)
 /*!40000 ALTER TABLE `rakbuah` DISABLE KEYS */;
 INSERT INTO `rakbuah` (`ID_Rak`, `Kapasitas`) VALUES
 	('140001', 100),
@@ -138,22 +138,18 @@ INSERT INTO `rakbuah` (`ID_Rak`, `Kapasitas`) VALUES
 
 -- Dumping structure for table db_lemonshop.transaksi
 CREATE TABLE IF NOT EXISTS `transaksi` (
-  `No_Transaksi` varchar(50) NOT NULL,
-  `Tanggal` date DEFAULT NULL,
-  `JumlahTransaksi` bigint(20) DEFAULT NULL,
-  `Kasir` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`No_Transaksi`),
-  KEY `Kasir` (`Kasir`),
-  CONSTRAINT `Kasir` FOREIGN KEY (`Kasir`) REFERENCES `kasir` (`ID_Pengawai`)
+  `pembayaran` int(11) NOT NULL,
+  `harga` int(11) DEFAULT NULL,
+  `jumlahbuah` int(11) DEFAULT NULL,
+  `kembalian` int(11) DEFAULT NULL,
+  `total_belanja` int(11) DEFAULT NULL,
+  PRIMARY KEY (`pembayaran`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_lemonshop.transaksi: ~4 rows (approximately)
+-- Dumping data for table db_lemonshop.transaksi: ~1 rows (approximately)
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
-INSERT INTO `transaksi` (`No_Transaksi`, `Tanggal`, `JumlahTransaksi`, `Kasir`) VALUES
-	('09062020001', '2020-06-09', 20000, '12014'),
-	('09062020002', '2020-06-09', 100000, '12014'),
-	('09062020003', '2020-06-09', 4000000, '12014'),
-	('09062020004', '2020-06-09', 60000, '12014');
+INSERT INTO `transaksi` (`pembayaran`, `harga`, `jumlahbuah`, `kembalian`, `total_belanja`) VALUES
+	(20000, 20000, 1, 0, 20000);
 /*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
 
 -- Dumping structure for table db_lemonshop.transaksi_restok
