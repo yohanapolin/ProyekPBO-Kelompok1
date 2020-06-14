@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
  * @author dennitogg
  */
 public class TransaksiJFrame extends javax.swing.JFrame {
+    
+    DbHandler a = new DbHandler();
 
     /**
      * Creates new form TransaksiJFrame
