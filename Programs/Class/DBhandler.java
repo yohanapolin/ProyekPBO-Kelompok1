@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
-import lemonshop.*;
+import kelompok_01_lemonfruitshop.*;
 public class DbHandler {
     private Connection connection;
 	private boolean connected;
@@ -403,9 +403,7 @@ public class DbHandler {
                   return (rak);
          }
 
-}
-
-public void addTransaksi(int harga, int jumlahbuah, int pembayaran, int kembalian, int total) {
+ public void addTransaksi(int harga, int jumlahbuah, int pembayaran, int kembalian, int total) {
 		
 		if (this.connected) {
 			String query = "INSERT INTO `db_lemonshop`.`transaksi` (`pembayaran`, `harga`, `jumlahbuah`, `kembalian`, `total_belanja`) VALUES ("+pembayaran+ harga+ jumlahbuah+kembalian+total+")";
@@ -421,9 +419,5 @@ public void addTransaksi(int harga, int jumlahbuah, int pembayaran, int kembalia
 		}
 		
 	}
+}
 
-
-
-
-
-	
