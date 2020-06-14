@@ -3,7 +3,7 @@
 public class pemilik_toko {
   private String nama;
   private Laporan laporan;
-  private pemesanan_buah pemesananbuah;
+  private Catatan_restock pemesananbuah;
   private Kasir catattransaksi;
   
   public Laporan melihatlaporan () {
