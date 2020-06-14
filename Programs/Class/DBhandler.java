@@ -405,6 +405,22 @@ public class DbHandler {
 
 }
 
+public void addTransaksi(int harga, int jumlahbuah, int pembayaran, int kembalian, int total) {
+		
+		if (this.connected) {
+			String query = "INSERT INTO `db_lemonshop`.`transaksi` (`pembayaran`, `harga`, `jumlahbuah`, `kembalian`, `total_belanja`) VALUES ("+pembayaran+ harga+ jumlahbuah+kembalian+total+")";
+			try {
+                            Statement stmt = this.connection.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query);
+                                
+				
+			} catch (Exception _e) {
+				
+                                System.out.println("Exception: " + _e.getMessage());
+			}
+		}
+		
+	}
 
 
 
